@@ -51,10 +51,25 @@
 	</dependencies>
 
 	<build>
+		<filters>
+			<filter>src/main/resources/local.properties</filter>
+		</filters>
+		<resources>
+			<resource>
+				<directory>rc/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<delimiters>
+						<delimiter>@</delimiter>
+						</delimiters>
+					<UseDefaultdelimiters>false</UseDefaultdelimiters>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
